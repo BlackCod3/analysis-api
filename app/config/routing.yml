@@ -1,0 +1,4 @@
+wb_analysis:
+    resource: "@WBAnalysisBundle/Resources/config/routing.yml"
+    prefix:   /
+

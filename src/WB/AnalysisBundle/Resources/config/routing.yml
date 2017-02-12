@@ -1,0 +1,9 @@
+wb_analysis_collect_measure:
+    path:     /collect
+    defaults: { _controller: WBAnalysisBundle:Measure:getMeasure }
+    methods:  [GET]
+
+wb_analysis_post_measure:
+    path:     /collect
+    defaults: { _controller: WBAnalysisBundle:Measure:postMeasure }
+    methods:  [POST]
