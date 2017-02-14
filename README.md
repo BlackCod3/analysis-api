@@ -5,13 +5,13 @@ This is an app that manage measure (see documentation https://analytics.wizbii.c
 
 ## Install ##
 
-``	$ git clone git@github.com:BlackCod3/analysis-api.git
+	$ git clone git@github.com:BlackCod3/analysis-api.git
 
-``	$ cd analysis-api
+	$ cd analysis-api
 
-``	$ composer install
+	$ composer install
 
-``	$ php bin/console server:start 
+	$ php bin/console server:start 
 
 
 ## what's inside ? ##
