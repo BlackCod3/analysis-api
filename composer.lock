@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/BlackCod3/measure-recorder-client.git",
-                "reference": "f043401fd91daaf7e0b4195296562bb59931ef9b"
+                "reference": "20c214af39dc3e125388eb76be41ac32bdccb1c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BlackCod3/measure-recorder-client/zipball/f043401fd91daaf7e0b4195296562bb59931ef9b",
-                "reference": "f043401fd91daaf7e0b4195296562bb59931ef9b",
+                "url": "https://api.github.com/repos/BlackCod3/measure-recorder-client/zipball/20c214af39dc3e125388eb76be41ac32bdccb1c1",
+                "reference": "20c214af39dc3e125388eb76be41ac32bdccb1c1",
                 "shasum": ""
             },
             "require": {
@@ -43,7 +43,7 @@
                 "source": "https://github.com/BlackCod3/measure-recorder-client/tree/master",
                 "issues": "https://github.com/BlackCod3/measure-recorder-client/issues"
             },
-            "time": "2017-02-12 20:15:31"
+            "time": "2017-02-13 23:40:27"
         },
         {
             "name": "alcaeus/mongo-php-adapter",
