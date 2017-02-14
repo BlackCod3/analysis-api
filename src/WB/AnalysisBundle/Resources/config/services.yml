@@ -1,4 +1,4 @@
 services:
-#    wb_analysis.example:
-#        class: WB\AnalysisBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    wb_analysis.recorder:
+        class: WB\AnalysisBundle\Service\RecorderClientService
+        arguments: [%recorder_client_config%]
