@@ -5,6 +5,7 @@ namespace WB\AnalysisBundle\Handler;
 
 use MeasureRecorder\Model\Measure;
 use MeasureRecorder\Client;
+use Symfony\Component\HttpFoundation\Response;
 
 
 class MeasureHandler
@@ -87,53 +88,32 @@ class MeasureHandler
     }
 
     public function serveRequest($maxQt){
-        $response = array(
-            'code' => 200,
-            'Message' =>'OK !'
-        );
+        $response = new Response( 'OK ! Measure successfully recorder', 200);
 
         if($this->isRedundant()){
-            return array(
-                'code' => 403,
-                'Message' =>'Same measure already recorded in no later than a second'
-            );
+            return new Response( 'Same measure already recorded in no later than a second', 403);
         }
 
         if(!$this->hasMandatoryFields()){
-            return array(
-                'code' => 400,
-                'Message' =>'Missing values'
-            );
+            return new Response( 'Bad request: Missing values', 400);
         }
 
         if(!$this->userExists()){
-            return array(
-                'code' => 404,
-                'Message' =>'User not found'
-            );
+            return new Response( 'Resource not found: User not found', 404);
         }
 
         if(!$this->isAcceptableQT($maxQt)){
-            return array(
-                'code' => 403,
-                'Message' =>'Important queue time for cure=rent measure, rejecting it'
-            );
+            return new Response( 'Important queue time for cure=rent measure, rejecting it', 403);
         }
 
         if(!$this->isAvailableApiVersion()){
-            return array(
-                'code' => 505,
-                'Message' =>'Api version asked not supported yet'
-            );
+            return new Response( 'Important queue time for cure=rent measure, rejecting it', 505);
         }
 
         try{
             $this->client->saveMeasure($this->measure);
         }catch(\Exception $e){
-            return array(
-                'code' => 500,
-                'Message' =>'Internal Error'
-            );
+            return new Response( 'Internal error', 505);
         }
 
         return $response;

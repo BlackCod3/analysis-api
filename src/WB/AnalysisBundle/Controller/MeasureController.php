@@ -56,18 +56,12 @@ class MeasureController extends FOSRestController
                 $measureHandler = new MeasureHandler($recorder, $params);
                 $result = $measureHandler->serveRequest($maxQt);
             }else{
-                $result = array(
-                    'code' => 400,
-                    'Message' =>'Bad Request'
-                );
+                return new Response( 'Bad request', 400);
             }
         }catch(\Exception $e){
-            $result = array(
-                'code' => 500,
-                'Message' =>'Internal Error'
-            );
+            return  new Response( 'Internal Error', 500);
         }
 
-        return new JsonResponse($result);
+        return $result;
     }
 }
