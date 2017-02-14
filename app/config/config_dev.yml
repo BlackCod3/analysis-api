@@ -33,3 +33,6 @@ monolog:
 #swiftmailer:
 #    delivery_addresses: ['me@example.com']
 
+parameters:
+    recorder_client_config: dev
+    max_qt: 3600

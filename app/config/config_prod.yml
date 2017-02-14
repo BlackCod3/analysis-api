@@ -19,3 +19,6 @@ monolog:
             level: debug
         console:
             type:  console
+
+parameters:
+    recorder_client_config: prod
