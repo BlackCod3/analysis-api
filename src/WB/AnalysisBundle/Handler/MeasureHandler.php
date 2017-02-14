@@ -9,15 +9,12 @@ use MeasureRecorder\Client;
 
 class MeasureHandler
 {
-
     const MANDATORY_FIELDS = array('v', 't', 'wct', 'wui', 'wuui', 'ec', 'ea', 'tid', 'ds', 'sn', 'an');
     const MEASURE_TYPE = array('pageview', 'screenview', 'event');
 
     # list could be mocked in mongo... or here
     # not sure if wui or wuui
     const USER_WUI_MOCK = array('john-f', 'robert-k', 'richard-z', 'ben-x', 'max-d', 'dim-sum', 'foo-bar');
-
-    const QT = 3600;
 
     const V = 1;
 
@@ -71,9 +68,9 @@ class MeasureHandler
         return true;
     }
 
-    public function isAcceptableQT(){
+    public function isAcceptableQT($maxQt){
 
-        if($this->measure->getMeta('qt') > self::QT){
+        if($this->measure->getMeta('qt') > $maxQt){
             return false;
         }
 
@@ -89,7 +86,7 @@ class MeasureHandler
         return true;
     }
 
-    public function serveRequest(){
+    public function serveRequest($maxQt){
         $response = array(
             'code' => 200,
             'Message' =>'OK !'
@@ -116,7 +113,7 @@ class MeasureHandler
             );
         }
 
-        if(!$this->isAcceptableQT()){
+        if(!$this->isAcceptableQT($maxQt)){
             return array(
                 'code' => 403,
                 'Message' =>'Important queue time for cure=rent measure, rejecting it'
