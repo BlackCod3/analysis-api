@@ -88,10 +88,10 @@ class MeasureHandler
     }
 
     public function serveRequest($maxQt){
-        $response = new Response( 'OK ! Measure successfully recorder', 200);
+        $response = new Response( 'OK ! Measure successfully recorder', 201);
 
         if($this->isRedundant()){
-            return new Response( 'Same measure already recorded in no later than a second', 403);
+            return new Response( 'Same measure already recorded in no later than a second', 409);
         }
 
         if(!$this->hasMandatoryFields()){
@@ -103,11 +103,11 @@ class MeasureHandler
         }
 
         if(!$this->isAcceptableQT($maxQt)){
-            return new Response( 'Important queue time for cure=rent measure, rejecting it', 403);
+            return new Response( 'Important queue time for cure=rent measure, rejecting it', 409);
         }
 
         if(!$this->isAvailableApiVersion()){
-            return new Response( 'Important queue time for cure=rent measure, rejecting it', 505);
+            return new Response( 'Api version requested not available', 501);
         }
 
         try{
