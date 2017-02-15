@@ -28,4 +28,4 @@ See the api documentation on : localhost:%port%/documentation
 
 	$ curl -X GET 'localhost:%port%/collect' 
 	
-	$  curl -X GET -d '[{"t":"event","dl":"company/wizbii","dr":"job/dev-backend-chez-wizbii" ,"wct":"profile", "wui":"robert-k","ec":"navigation", "ea":"tap","el":"button-top","ev":1,"tid":"UA-12345-Y", "ds":"apps","sn":"company","an":"WizbiiStudentAndroid","av":"1.2.1","qt":"1230","v":1, "wuui": "52fhe52e65e1f4f2"}]' 'localhost:%port%/collect'
+	$  curl -X POST -d '[{"t":"event","dl":"company/wizbii","dr":"job/dev-backend-chez-wizbii" ,"wct":"profile", "wui":"robert-k","ec":"navigation", "ea":"tap","el":"button-top","ev":1,"tid":"UA-12345-Y", "ds":"apps","sn":"company","an":"WizbiiStudentAndroid","av":"1.2.1","qt":"1230","v":1, "wuui": "52fhe52e65e1f4f2"}]' 'localhost:%port%/collect'
