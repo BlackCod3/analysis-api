@@ -31,7 +31,8 @@
         "incenteev/composer-parameter-handler": "^2.0",
         "alcaeus/mongo-php-adapter": "^1.0",
         "friendsofsymfony/rest-bundle": "^2.1",
-        "BlackCod3/measure-recorder-client" : "dev-master"
+        "BlackCod3/measure-recorder-client" : "dev-master",
+        "nelmio/api-doc-bundle": "^2.13"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

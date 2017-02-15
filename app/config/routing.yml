@@ -2,3 +2,6 @@ wb_analysis:
     resource: "@WBAnalysisBundle/Resources/config/routing.yml"
     prefix:   /
 
+nelmio-api-doc:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /documentation
